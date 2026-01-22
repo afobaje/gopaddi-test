@@ -1,16 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono,Poppins } from "next/font/google";
 import "./globals.css";
+import QueryProvider from "@/context/QueryProvider";
+import SearchNavigationProvider from "@/context/ItemsProvider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
+const poppins=Poppins({
+  subsets:['latin'],
+  weight:['400','700'],
+  variable:'--font-poppins'
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,9 +32,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${poppins.variable} ${poppins.variable} antialiased`}
       >
+        <QueryProvider>
+          <SearchNavigationProvider>
         {children}
+          </SearchNavigationProvider>
+        </QueryProvider>
       </body>
     </html>
   );
