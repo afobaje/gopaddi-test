@@ -25,7 +25,7 @@ export default function Sidebar() {
     </div>
 ))}
         </section>
-        <div className='flex bg-[#F0F2F5] p-3 items-center '>
+        <div className='flex bg-[#F0F2F5] my-4 gap-2 p-3 items-center '>
 <button className='px-2 text-white rounded-sm bg-[#0D6EFD]'>Go</button>
 <span className='text-sm'>Personal Account</span><span><CaretUpandDownIcon /></span>
         </div>

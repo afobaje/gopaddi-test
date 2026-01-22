@@ -1,5 +1,5 @@
 import React from 'react'
-import { ToIcon } from '../ui/SvgAssets/GeneralAsset'
+import { PersonIcon, SettingsIcon, ThreedotsIcon, ToIcon } from '../ui/SvgAssets/GeneralAsset'
 import clsx from 'clsx'
 const heroCardsData=[
     {bgColor:'bg-[#000031]',textColor:'text-white',label:'Activities',actionButton:<button className='mt-2 px-2 py-1 bg-[#0D6EFD] text-white rounded-sm text-sm'>Add Activities</button>},
@@ -12,6 +12,32 @@ export default function Hero() {
         <div>
             <img src="/assets/banner.png" alt="" />
         </div>
+        {/* <div className="flex gap-1 flex-col">
+            <div className="date bg-[#FEF4E6] flex items-center gap-1 py-1 text-[#7A4504] w-fit px-2 text-xs rounded-sm">
+                <span>21 March 2024</span>
+                <ToIcon/>
+                <span>21 April 2024</span>
+            </div>
+            <div className="flex justify-between">
+            <h2 className='font-bold text-xl'>Bahamas Family Trip</h2>
+            <div className="flex justify-between items-center gap-2">
+<span className="bg-[#E7F0FF] px-5 rounded-sm text-center py-2"><PersonIcon/></span>
+<span><ThreedotsIcon/></span>
+            </div>
+            </div>
+
+            <div className="flex justify-between items-center" >
+            <div className='text-[#676E7E]'>
+                <span className='border-r border-[#D0D5DD] mr-1'>New York, United States of America </span>
+                <span>Solo Trip</span>
+            </div>
+<span><SettingsIcon/></span>
+            </div>
+        </div> */}
+
+
+<div className="flex justify-between">
+
         <div className="flex gap-1 flex-col">
             <div className="date bg-[#FEF4E6] flex items-center gap-1 py-1 text-[#7A4504] w-fit px-2 text-xs rounded-sm">
                 <span>21 March 2024</span>
@@ -24,7 +50,19 @@ export default function Hero() {
                 <span>Solo Trip</span>
             </div>
         </div>
-        <div className="flex gap-2">
+<div className="flex flex-col">
+
+<div className="flex items-center gap-2 mb-2">
+
+    <span className="bg-[#E7F0FF] px-5 rounded-sm text-center py-2"><PersonIcon/></span>
+<span><ThreedotsIcon/></span>
+</div>
+<div className="flex items-center gap-2 mb-2">
+    <span><SettingsIcon/></span>
+</div>
+</div>
+</div>
+        <div className="flex md:flex-row flex-col gap-2">
 {heroCardsData.map((card)=>(
     <HeroCard key={card.label} bgColor={card.bgColor} textColor={card.textColor} label={card.label} actionButton={card.actionButton}/>
 ))}
